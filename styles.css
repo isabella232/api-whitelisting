@@ -196,10 +196,11 @@ input {
 	background-color: #addbtn;
 }
 .glyphicon {
+	margin: 5px;
+/*
 	width: 40px;
     height: 40px;
-	margin: 5px;
-/*    background-color: #CD5303;
+    background-color: #CD5303;
     border-radius: 20px;
     line-height: 40px;
     font-size: 12px;
