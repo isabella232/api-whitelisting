@@ -107,9 +107,13 @@ var orec = {
   });
 }
 
+function setup() {
+	$("#host").text(host);
+}
+
 </script>
 
-<body>
+<body onload="setup()">
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -118,6 +122,7 @@ var orec = {
       </a>
 	  <h2 class="navbar-text">BlueJeans CORS Validator</h2>
     </div>
+	  <p class="navbar-text navbar-right">API Host:&nbsp<i id="host"></i></p>
   </div>
 </nav>
   <div class="container">

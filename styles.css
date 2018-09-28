@@ -215,8 +215,16 @@ input {
 	color: red;
 }
 
+#host {
+	color: blue;
+}
+
 .navbar {
 	background-color: #DDE4EE !important;
+}
+
+.navbar-right {
+	margin-right:10px !important;
 }
 
 .navbar-header {
