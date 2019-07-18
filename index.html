@@ -16,6 +16,8 @@
 
 <script type="text/javascript">
 
+var version = "1.1.0";
+
 var host = "";
 var apiToken = "/oauth2/token";
 
@@ -26,6 +28,10 @@ function jsstr(st){
 
 function apiSchedule(uid) {
    return "/v1/user/"+uid+"/scheduled_meeting";
+}
+
+function apiEnterprise(uid) {
+	return "/v1/user/" + uid + "/enterprise_profile";
 }
 
 var gUserId = 0;
@@ -45,8 +51,8 @@ var howLong = 10 * 60 * 1000;
 var host = $("#host option:selected").val();
 
 	var srec = {
-	  title : "CORS Validation Meeting",
-	  description : "Scheduled from CORS Validation Web Page",
+	  title : "CORS Validation Meeting: " + location.href,
+	  description : "Scheduled from CORS Validation Web Page on: " + location.href,
 	  start : Date.now() + 5000,
 	  end : Date.now() + howLong,
 	  timezone : "America/Los_Angeles",
@@ -110,7 +116,6 @@ function doAuthorize(){
   });  
 }
 
-
 // Make AJAX call to login to BlueJeans
 //
 function doLogin(){
@@ -172,6 +177,7 @@ function setup() {
   remindAPIHost(false);
   $("#step1").hide();
   $("#step2").hide();
+  $("#version").text(version);
   okToTest(false);
 }
 
@@ -282,5 +288,14 @@ function setup() {
 	</div>
 	  
   </div>
+<nav class="navbar">
+  <div class="container-fluid">
+    <div class="navbar-footer">
+	  <div class="col-sm-4">
+	    Validator Version: <span id="version"></span>
+	  </div>
+    </div>
+  </div>
+</nav>  
 </body>
 </html>
